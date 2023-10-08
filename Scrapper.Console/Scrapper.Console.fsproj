@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+	
+	<PublishTrimmed>true</PublishTrimmed>
+	<PublishAot>true</PublishAot>	  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Models.fs" />
+    <None Include="Db\Extractor.db" />
+    <None Include="Db\createdb.fsx" />
+    <None Include="Db\init.sql" />
+    <Content Include="appsettings.json" />
+    <None Include="env.fsx" />
+    <None Include="loadEnv.ps1" />
+    <None Include="dev.env">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Program.fs" />
+  </ItemGroup>  
+  <ItemGroup>
+    <ProjectReference Include="..\Scrapper.Lib\Scrapper.Lib.fsproj" />
+  </ItemGroup>  
+  <ItemGroup>
+    <EmbeddedResource Update="SqlFiles.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

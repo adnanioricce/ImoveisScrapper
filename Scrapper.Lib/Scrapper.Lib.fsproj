@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Db\init.sql" />
+    <Compile Include="Env.fs" />
+    <Compile Include="Extractor.fs" />
+    <Compile Include="Db.fs" />
+    <Compile Include="Models.fs" />
+    <Compile Include="PersistJob.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.4" />
+    <PackageReference Include="Npgsql" Version="7.0.6" />
+    <PackageReference Include="PuppeteerSharp" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="SqlFiles.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
