@@ -14,12 +14,10 @@ open System.Data
 open ImoveisScrapper.Db.Imoveis
 open Npgsql
 open Dapper
-module Env =
-    let connectionString = "User ID=postgres;Password=postgres;Host=localhost;Port=5433;Database=imoveisdb;Pooling=true;"
 module Db =        
     type ConnectionFactory = unit -> IDbConnection
     type ConnectionHandler<'a> = IDbConnection -> 'a
-    let createConnection () :IDbConnection = new NpgsqlConnection(Env.connectionString)
+    let createConnection () :IDbConnection = new NpgsqlConnection(Env.connStr)
     let onConnectionWith (connectionFactory:ConnectionFactory) (func:ConnectionHandler<'a>)  =
         connectionFactory()
         |> func
@@ -127,9 +125,7 @@ module Views =
             table [ _class "table"] [
                 headers ()
                 tbody [] (rows |> Seq.toList)
-            ]
-        let cardBody () =
-            div [] (renderImoveis model.Imoveis)
+            ]        
         
         [
             partial()
@@ -209,8 +205,7 @@ let main args =
             fun webHostBuilder ->
                 webHostBuilder
                     .UseContentRoot(contentRoot)
-                    .UseWebRoot(webRoot)
-                    .UseUrls([|"http://localhost:6500";"https://localhost:6501"|])
+                    .UseWebRoot(webRoot)                    
                     .Configure(Action<IApplicationBuilder> configureApp)
                     .ConfigureServices(configureServices)
                     .ConfigureLogging(configureLogging)

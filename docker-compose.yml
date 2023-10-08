@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  scrapper.worker:
+    image: ${DOCKER_REGISTRY-}scrapperworker
+    build:
+      context: .
+      dockerfile: Scrapper.Worker/Dockerfile
+
+  scrapper.web:
+    image: ${DOCKER_REGISTRY-}scrapperweb
+    build:
+      context: .
+      dockerfile: Scrapper.Web/Dockerfile
+

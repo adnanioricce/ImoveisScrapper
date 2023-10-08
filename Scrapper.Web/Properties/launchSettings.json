@@ -7,6 +7,16 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:55572;http://localhost:55573"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "IMOVEISSCRAPPER_CONNECTION_STRING": "User ID=postgres;Password=postgres;Host=172.17.0.1;Port=5433;Database=imoveisdb;Pooling=true;"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }

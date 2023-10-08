@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "Scrapper.Worker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "IMOVEISSCRAPPER_WEBENGINE_PATH": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "IMOVEISSCRAPPER_CONNECTION_STRING": "User ID=postgres;Password=postgres;Host=172.17.0.1;Port=5433;Database=imoveisdb;Pooling=true;"
+      },
+      "dotnetRunMessages": true
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "environmentVariables": {
+        "IMOVEISSCRAPPER_WEBENGINE_PATH": "",
+        "IMOVEISSCRAPPER_CONNECTION_STRING": "User ID=postgres;Password=postgres;Host=172.17.0.1;Port=5433;Database=imoveisdb;Pooling=true;"
+      }
+    }
+  }
+}
