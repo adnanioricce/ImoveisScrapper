@@ -21,8 +21,9 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Scrapper.sln
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build --no-restore Scrapper.sln
+    # Necessary configure environment for integration tests
+    #- name: Test
+    #  run: dotnet test --no-build --verbosity normal Scrapper.sln
