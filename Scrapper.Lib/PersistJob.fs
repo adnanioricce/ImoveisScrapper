@@ -30,17 +30,9 @@ module PersistJob =
             Adicionais = d.amenities |> String.concat ";"
             Images = d.images
         }
-    let getExtractions mapper getFiles =
-        let files = getFiles ()
-        let loadDtos file = 
-            JsonSerializer.Deserialize<VivaRealCardDto[]>(File.ReadAllText(file))
-            |> Seq.map (fun from ->(mapper from))
-        let loadExtractions =
-            files
-            |> Seq.map (fun file -> fun _ -> loadDtos file)
-        loadExtractions
+    
     let run getExtractionsLoaders (persistDtos:PersistExtractions) =
         getExtractionsLoaders ()
-        |> Seq.map persistDtos            
+        |> Seq.map persistDtos
         |> Async.Sequential
         |> Async.RunSynchronously    

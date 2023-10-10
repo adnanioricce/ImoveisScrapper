@@ -8,7 +8,7 @@
 
 
   <ItemGroup>
-    <Compile Include="Worker.fs" />
+    <Compile Include="PersistWorker.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -20,5 +20,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scrapper.Lib\Scrapper.Lib.fsproj" />
   </ItemGroup>
 </Project>

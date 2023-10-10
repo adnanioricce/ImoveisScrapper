@@ -1,15 +1,29 @@
 version: '3.4'
 
 services:
+  scrapper.db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: imoveisdb
+    volumes:
+        - ./Scrapper.Lib/Db/init.sql:/docker-entrypoint-initdb.d/init.sql
   scrapper.worker:
     image: ${DOCKER_REGISTRY-}scrapperworker
     build:
       context: .
       dockerfile: Scrapper.Worker/Dockerfile
+    environment:
+        IMOVEISSCRAPPER_CONNECTION_STRING: "User ID=postgres;Password=postgres;Host=scrapper.db;Port=5432;Database=imoveisdb;Pooling=true;"
+        IMOVEISSCRAPPER_WEBENGINE_PATH: "/usr/bin/google-chrome"
 
   scrapper.web:
     image: ${DOCKER_REGISTRY-}scrapperweb
     build:
       context: .
       dockerfile: Scrapper.Web/Dockerfile
+    environment:
+        IMOVEISSCRAPPER_CONNECTION_STRING: "User ID=postgres;Password=postgres;Host=scrapper.db;Port=5432;Database=imoveisdb;Pooling=true;"
+        IMOVEISSCRAPPER_WEBENGINE_PATH: "/usr/bin/google-chrome"    
 

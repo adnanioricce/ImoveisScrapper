@@ -21,4 +21,4 @@ RUN dotnet publish "Scrapper.Web.fsproj" -c Release -o /app/publish /p:UseAppHos
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Scrapper.Web.App.dll","--urls", "http://*:55572;http://*:55573"]
+ENTRYPOINT ["dotnet", "Scrapper.Web.App.dll"]
