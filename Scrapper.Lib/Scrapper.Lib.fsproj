@@ -6,14 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Logger.fs" />
     <None Include="Db\init.sql" />
-    <Compile Include="Env.fs" />
-    <Compile Include="Extractor.fs" />
-    <Compile Include="Db.fs" />
-    <Compile Include="Models.fs" />
-    <Compile Include="PersistJob.fs" />
+    <Compile Include="Infra\Env.fs" />
+    <Compile Include="Infra\Utils.fs" />
+    <Compile Include="Infra\Logger.fs" />
+    <Compile Include="Infra\Db.fs" />
+    <Compile Include="Infra\ImoveisRepository.fs" />
+    <Compile Include="Domain\Models.fs" />
+    <Compile Include="Domain\Extractor.fs" />
+    <Compile Include="Domain\DomainEvents.fs" />
+    <Compile Include="Domain\PersistJob.fs" />
+    <Compile Include="Domain\VivaRealExtractor.fs" />
     <Compile Include="Jobs.fs" />
+    <Content Include="README.md" />
+    
+    
   </ItemGroup>
 
   <ItemGroup>

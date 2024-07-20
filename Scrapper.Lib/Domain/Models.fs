@@ -1,5 +1,12 @@
 ﻿namespace ImoveisScrapper
-module Money =
+module Mapper =
+    type SpecificToGeneralDto<'specific,'general> = 'specific -> 'general
+module Extractor =
+    type FilePath = string
+    type GetExtractions<'extraction> = unit -> Async<'extraction seq>
+    type PersistExtractions<'extraction> = GetExtractions<'extraction> -> Async<Result<int,exn>>
+    
+module Money =    
     type Money =
     | CurrencyAmount of string * decimal
     | InvalidMoney of string
@@ -11,4 +18,9 @@ module Money =
             | true, amountDecimal -> CurrencyAmount ("R$", amountDecimal)
             | _ -> InvalidMoney input
         | _ -> InvalidMoney input
-
+    let parsePrice value =
+        match parseMoneyString value with
+        | Money.CurrencyAmount (currency,amount) -> amount
+        | _ -> 0.0m
+// module PersistJob =
+//     

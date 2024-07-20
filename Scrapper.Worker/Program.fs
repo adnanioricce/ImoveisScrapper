@@ -12,7 +12,7 @@ module Program =
     let createHostBuilder args =
         Host.CreateDefaultBuilder(args)
             .ConfigureServices(fun hostContext services ->
-                services.AddHostedService<PersistWorker>() |> ignore)
+                services.AddHostedService<ExtracterWorker>() |> ignore)
 
     [<EntryPoint>]
     let main args =
@@ -20,5 +20,4 @@ module Program =
         let webEngineExists = System.IO.File.Exists(webEngine)
         printfn "%s -> file exists? %s" webEngine (if webEngineExists then "Yes" else "No")
         createHostBuilder(args).Build().Run()
-
         0 // exit code

@@ -6,7 +6,7 @@ open System.Threading.Tasks
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
 open Scrapper
-type PersistWorker(logger: ILogger<PersistWorker>) =
+type ExtracterWorker(logger: ILogger<ExtracterWorker>) =
     inherit BackgroundService()
 
     override _.ExecuteAsync(ct: CancellationToken) =
