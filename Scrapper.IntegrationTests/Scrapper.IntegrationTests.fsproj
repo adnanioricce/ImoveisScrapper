@@ -23,6 +23,7 @@
     <Content Include="Extractions\imoveis.3_23092023_03254733.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Compile Include="ExtractionTests.fs" />
     <Compile Include="PersistJobTests.fs" />
     <Compile Include="DatabaseTests.fs" />
     <Compile Include="Program.fs" />

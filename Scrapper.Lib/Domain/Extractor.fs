@@ -3,7 +3,7 @@
 open System.Text.Json
 open Microsoft.Extensions.Logging
 
-module Extractor =
+module ExtractorService =
     open PuppeteerSharp
     type ExtractArgs = {        
         Url:string

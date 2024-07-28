@@ -11,9 +11,9 @@ open Microsoft.Extensions.DependencyInjection
 open Giraffe
 open ImoveisScrapper
 open System.Data
-open ImoveisScrapper.Db.Imoveis
 open Npgsql
 open Dapper
+open Scrapper.Lib.DAL.ImoveisRepository
 module Db =        
     type ConnectionFactory = unit -> IDbConnection
     type ConnectionHandler<'a> = IDbConnection -> 'a
@@ -23,7 +23,7 @@ module Db =
         |> func
     let get offset limit = async {
         use conn = createConnection ()
-        let! response = ImoveisScrapper.Db.Imoveis.get offset limit conn        
+        let! response = Scrapper.Lib.DAL.ImoveisRepository.get conn offset limit
         //TODO:Log
         return 
             response
@@ -141,7 +141,7 @@ module Views =
 
 let indexHandler (name : string) =
     let extractions = (Db.get 0 100) |> Async.RunSynchronously
-    let greetings = sprintf "Olá %s! esses são todos os imoveis extraidos nos ultimos dias." name
+    let greetings = sprintf "Olï¿½ %s! esses sï¿½o todos os imoveis extraidos nos ultimos dias." name
     let model     = { Text = greetings; Imoveis = extractions }
     let view      = Views.index model
     htmlView view

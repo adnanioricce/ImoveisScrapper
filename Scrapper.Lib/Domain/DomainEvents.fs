@@ -1,6 +1,6 @@
-namespace Scrapper.Lib.Domain
+namespace Scrapper.Lib
 
-module Domain =
+module Events =
     type ExtractionUrl = ExtractionUrl of string
     type PageContent = string 
     type DomainEvent =

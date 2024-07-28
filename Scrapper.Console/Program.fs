@@ -3,7 +3,6 @@ open System.Text.Json
 open System.IO
 open System.Text
 open ImoveisScrapper
-open ImoveisScrapper.VivaRealExtractor
 open ImoveisScrapper.Db
 open Scrapper
 let loadEnv () = 

@@ -15,6 +15,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scrapper.Worker", "Scrapper
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D79AA604-76A8-4FDC-893B-47B5DA1CC941}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scrapper.UnitTests", "Scrapper.UnitTests\Scrapper.UnitTests.fsproj", "{61FA061B-E761-4500-9D15-4EF6A6EE96AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D79AA604-76A8-4FDC-893B-47B5DA1CC941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D79AA604-76A8-4FDC-893B-47B5DA1CC941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D79AA604-76A8-4FDC-893B-47B5DA1CC941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FA061B-E761-4500-9D15-4EF6A6EE96AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FA061B-E761-4500-9D15-4EF6A6EE96AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FA061B-E761-4500-9D15-4EF6A6EE96AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FA061B-E761-4500-9D15-4EF6A6EE96AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

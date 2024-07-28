@@ -1,22 +1,17 @@
-module Scrapper.Lib.Domain
+module ExtractionTests
 
+
+open Xunit
 open ImoveisScrapper
+open ImoveisScrapper.Db
+open System.IO
+open Scrapper.Lib.DAL.ImoveisRepository
+open Scrapper.Lib.Domain.VivaRealExtractor
+open Newtonsoft.Json
+open Scrapper.Lib.Domain
 open Scrapper.Lib.DAL
-
-module VivaRealExtractor =
-    type VivaRealCardDto = {        
-        title: string
-        address: string
-        amenities: string array
-        banheiros: string
-        quartos: obj
-        vagas: obj
-        images: string array
-        price: string
-        status: string        
-     }
-    [<Literal>]
-    let jsCode = """() => {
+open Scrapper.Lib.Utils
+let jsCode = """() => {
 function parsePropertyCard(doc) {
   const propertyCard = {};
 
@@ -62,23 +57,10 @@ function parsePropertyCard(doc) {
 }
         return JSON.stringify(Array.from(document.querySelectorAll('.property-card__container')).map(e => parsePropertyCard(e)))
 }
-        """     
-    let extractImoveis url = async {
-      return! ExtractorService.extractPage<VivaRealCardDto[]> url jsCode
-    }
-    let mapper (d:VivaRealCardDto):ImoveisRepository.ImovelDto =
-        let parseInt (value:string) = 
-            match System.Int32.TryParse(value) with
-            | true,parsedValue -> parsedValue
-            | false,_ -> 0
-        { 
-            QuantidadeBanheiros = parseInt d.banheiros
-            QuantidadeQuartos = parseInt (string d.quartos)
-            QuantidadeVagas = parseInt (string d.vagas)
-            Preco = Money.parsePrice d.price
-            Titulo = d.title
-            Status = d.status
-            Endereco = d.address
-            Adicionais = d.amenities |> String.concat ";"
-            Images = d.images
-        }
+        """
+[<Theory>]
+[<InlineData("")>]
+let ``the extraction is expected to receive a url and a js code string to manipulate the page and return a list of objects `` () = async {
+    let! dtos = ExtractorService.extractPage<VivaRealCardDto array> "https://www.vivareal.com.br/venda/" jsCode
+    Assert.NotEmpty(dtos)
+}

@@ -4,11 +4,16 @@ open Xunit
 open ImoveisScrapper
 open ImoveisScrapper.Db
 open System.IO
-open ImoveisScrapper.VivaRealExtractor
+open Scrapper.Lib.DAL.ImoveisRepository
+open Scrapper.Lib.Domain.VivaRealExtractor
+open Newtonsoft.Json
+open Scrapper.Lib.Domain
+open Scrapper.Lib.DAL
+open Scrapper.Lib.Utils
 
 [<Fact>]
 let ``the persist job should read the json extraction and map it to the database`` () =
-    let dto:Imoveis.ImovelDto = {
+    let dto:ImovelDto = {
         QuantidadeBanheiros = 0
         QuantidadeQuartos = 0
         QuantidadeVagas = 0
@@ -26,7 +31,7 @@ let ``the persist job should read the json extraction and map it to the database
             match Money.parseMoneyString value with
             | Money.CurrencyAmount (currency,amount) -> amount
             | _ -> 0.0m
-    let mapper (d:VivaRealCardDto):Imoveis.ImovelDto =
+    let mapper (d:VivaRealCardDto):ImovelDto =
         let parseInt (value:string) = 
             match System.Int32.TryParse(value) with
             | true,parsedValue -> parsedValue
@@ -44,20 +49,32 @@ let ``the persist job should read the json extraction and map it to the database
         }
     let conn = Database.createConnectionWith Env.connectionString
     let createConnection () = conn
-    let getExtractionsLoaders : unit -> PersistJob.GetExtractions seq = 
-        fun _ -> PersistJob.getExtractions mapper (fun _ -> getFiles  "./Extractions")
-    let persistDtos (func:PersistJob.GetExtractions) =                      
-        let dtos = func()            
-        createConnection() |> Imoveis.insert dtos
-    PersistJob.run getExtractionsLoaders persistDtos
-    |> Array.reduce (fun lhs rhs ->
-        match lhs, rhs with
-        | Ok a,Ok b -> Result.Ok (a + b)
-        | Ok a,Error e -> Result.Ok a
-        | Error a,Ok b -> Result.Ok b
-        | Error a,Error b -> Result.Error a)
-    |> Result.mapError string
+    let getExtractionsLoaders : Extractor.GetExtractions<ImovelDto> =
+        fun _ -> 
+            let jobs = 
+                getFiles  "./Extractions"
+                |> Seq.collect (fun extraction ->                
+                        let fileContent = File.ReadAllText(extraction)
+                        let vivaRealDtos = JsonConvert.DeserializeObject<VivaRealCardDto array>(fileContent)
+                        let dtos = vivaRealDtos |> Seq.map Scrapper.Lib.Domain.VivaRealExtractor.mapper
+                        dtos
+                    )
+            async {
+                return jobs
+            }        
+                
+    let persistDtos : Extractor.PersistExtractions<ImovelDto> =
+        fun getExtractions -> 
+            let dtos = getExtractions() |> Async.RunSynchronously
+            use conn = createConnection()
+            let insert = ImoveisRepository.insert conn 
+            insert dtos
+
+    PersistJob.run<ImovelDto> getExtractionsLoaders persistDtos
+    |> Async.RunSynchronously    
     |> (fun r ->
         match r with
         | Ok _ -> ()
-        | Error e -> Assert.Fail(e))
+        | Error e -> 
+            Assert.Fail(
+                sprintf "the persistance test failed with the following exception: %s" (ErrorHandling.stringfy e)))

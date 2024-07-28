@@ -2,9 +2,10 @@
 module Mapper =
     type SpecificToGeneralDto<'specific,'general> = 'specific -> 'general
 module Extractor =
+    open Scrapper.Lib.Utils.ErrorHandling
     type FilePath = string
     type GetExtractions<'extraction> = unit -> Async<'extraction seq>
-    type PersistExtractions<'extraction> = GetExtractions<'extraction> -> Async<Result<int,exn>>
+    type PersistExtractions<'extraction> = GetExtractions<'extraction> -> Async<Result<int,AppError>>
     
 module Money =    
     type Money =

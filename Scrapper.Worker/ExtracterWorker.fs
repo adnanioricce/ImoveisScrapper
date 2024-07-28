@@ -13,10 +13,12 @@ type ExtracterWorker(logger: ILogger<ExtracterWorker>) =
         task {            
             let mutable index = 1
             let rng = Random()
+            let randomMinutes offset limit = TimeSpan.FromMinutes(rng.Next(offset,limit))
+            let randomSeconds offset limit = TimeSpan.FromSeconds(rng.Next(offset,limit))
             let delay state =
                 match state with
-                | Jobs.Empty -> TimeSpan.FromMinutes(rng.Next(30,360))
-                | Jobs.NonEmpty -> TimeSpan.FromMinutes(rng.Next(1,3))
+                | Jobs.Empty -> randomSeconds 30 360
+                | Jobs.NonEmpty -> randomSeconds 1 3
             while not ct.IsCancellationRequested do
                 let template index = sprintf "https://www.vivareal.com.br/venda/?pagina=%d" index
                 let url = template index
@@ -32,6 +34,6 @@ type ExtracterWorker(logger: ILogger<ExtracterWorker>) =
                     do! Task.Delay(delay state)
                 with
                     | ex -> logger.LogError("Url {url} throwed an exception during page extraction -> {ex}", url,ex)
-                do! Task.Delay(TimeSpan.FromMinutes(30))
+                do! Task.Delay(randomSeconds 30 60)
                 
         }
