@@ -24,6 +24,7 @@ let ``can insert data``() =
         Adicionais = ""
         Status = ""
         Images = [|""|]
+        Features = [||]
     }
     use conn = Database.createConnectionWith Env.connectionString
     ImoveisRepository.insert conn [dto] |> Async.RunSynchronously
@@ -45,6 +46,7 @@ let ``can query data``() =
         Adicionais = ""
         Status = ""
         Images = [|""|]
+        Features = [||]
     }
     use conn = Database.createConnectionWith Env.connectionString
     get conn 0 10 |> Async.RunSynchronously

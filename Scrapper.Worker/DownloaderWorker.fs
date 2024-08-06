@@ -6,9 +6,8 @@ open System.Threading.Tasks
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
 open Scrapper
-type ExtracterWorker(logger: ILogger<ExtracterWorker>) =
+type DownloaderWorker(logger: ILogger<DownloaderWorker>) =    
     inherit BackgroundService()
-
     override _.ExecuteAsync(ct: CancellationToken) =
         task {            
             let mutable index = 2
@@ -36,3 +35,5 @@ type ExtracterWorker(logger: ILogger<ExtracterWorker>) =
                 do! Task.Delay(randomSeconds 30 60)
                 
         }
+
+

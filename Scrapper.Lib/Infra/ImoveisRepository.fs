@@ -5,7 +5,14 @@ open Dapper
 open Scrapper
 open Scrapper.Lib.Utils.ErrorHandling
 
-module ImoveisRepository =     
+module ImoveisRepository =
+    [<Struct>]
+    [<CLIMutable>]
+    type ImovelFeatureDto = {
+        Name: string
+        Value: obj        
+    }
+    
     [<Struct>]
     [<CLIMutable>]
     type ImovelDto = {
@@ -18,7 +25,23 @@ module ImoveisRepository =
         Adicionais: string
         Status: string
         Images: string array
+        Features: ImovelFeatureDto array
     }
+    
+    [<CLIMutable>]
+    type NewImovelDto = {
+        Id: string
+        Price: decimal
+        Title: string
+        Description: string
+        Address: string
+        Size: string
+        Url: string
+        Images: string array
+        Features: ImovelFeatureDto array
+    }
+// 	, address VARCHAR(512)    
+//     , url NVARCHAR(MAX)
     
     type InsertImovel = ImovelDto seq -> Async<Result<int,AppError>>
     type GetImoveis = int -> int -> Async<Result<ImovelDto seq,AppError>>

@@ -23,6 +23,7 @@ let ``the persist job should read the json extraction and map it to the database
         Adicionais = ""
         Status = ""
         Images = [|""|]
+        Features = [||] 
     }
     let getFiles path =
         Directory.Exists(path)
@@ -46,6 +47,7 @@ let ``the persist job should read the json extraction and map it to the database
             Endereco = d.address
             Adicionais = d.amenities |> String.concat ";"
             Images = d.images
+            Features = [||]
         }
     let conn = Database.createConnectionWith Env.connectionString
     let createConnection () = conn

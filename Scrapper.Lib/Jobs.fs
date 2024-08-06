@@ -28,7 +28,7 @@ module Jobs =
         let saveData data = async {
             use conn = Database.createConnection ()
             let! response =
-                let dtos = data |> Seq.map VivaRealExtractor.mapper                
+                let dtos = data |> Seq.map VivaRealExtractor.mapper
                 ImoveisRepository.insert conn dtos 
             printfn "%A" response
         }

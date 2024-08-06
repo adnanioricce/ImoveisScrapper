@@ -5,16 +5,32 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: imoveisdb
+    ports:
+      - 5432:5432
     volumes:
         - ./Scrapper.Lib/Db/init.sql:/docker-entrypoint-initdb.d/init.sql
-  scrapper.extractionsdb:
-    image: mongo:8.0.0-rc13
-    restart: always    
+  extractionsdb:
+    image: mongo
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: passwdroot
-    volumes:
-      - mongodb_data_container:/data/db
+      MONGO_INITDB_ROOT_PASSWORD: example    
+    ports:
+      - 27018:27017
+#    volumes:
+#      - mongodb_data_container:/data/db
+  extractionsdb-gui:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8082:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: passwdroot
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@extractionsdb:27017/
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - extractionsdb
 # docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
 
   scrapper.queue:
@@ -24,7 +40,7 @@ services:
       - RABBITMQ_DEFAULT_USER=root
       - RABBITMQ_DEFAULT_PASS=passwd
     depends_on:
-      - scrapper.extractionsdb
+      - extractionsdb
       - scrapper.db
   
   scrapper.worker:
@@ -47,5 +63,5 @@ services:
         IMOVEISSCRAPPER_CONNECTION_STRING: "User ID=postgres;Password=postgres;Host=scrapper.db;Port=5432;Database=imoveisdb;Pooling=true;"
         IMOVEISSCRAPPER_WEBENGINE_PATH: "/usr/bin/google-chrome"    
 
-volumes:
-  mongodb_data_container:
+#volumes:
+#  mongodb_data_container:

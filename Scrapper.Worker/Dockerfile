@@ -1,6 +1,6 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
 # skip the download of chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV IMOVEISSCRAPPER_WEBENGINE_PATH /usr/bin/google-chrome
@@ -10,7 +10,7 @@ ENV IMOVEISSCRAPPER_CONNECTION_STRING "User ID=postgres;Password=postgres;Host=1
 
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["Scrapper.Worker/Scrapper.Worker.fsproj", "Scrapper.Worker/"]
 RUN dotnet restore "Scrapper.Worker/Scrapper.Worker.fsproj"

@@ -1,16 +1,25 @@
-﻿CREATE TABLE Imoveis(
-	Id SERIAL PRIMARY KEY
-	, QuantidadeBanheiros INT
-	, QuantidadeQuartos INT
-	, QuantidadeVagas INT
-	, Preco DECIMAL(10,2)
-	, Titulo VARCHAR(512)
-	, Endereco VARCHAR(512)
-	, Adicionais VARCHAR(512)	
-	, Status VARCHAR(64)
+﻿create table feature (
+     id smallint unsigned PRIMARY KEY AUTO_INCREMENT,
+     name varchar(64) NOT NULL,
+     UNIQUE KEY (name)
 );
-CREATE TABLE Imagens(
-	Id SERIAL PRIMARY KEY
-	,IdImovel INT	
-	,Url VARCHAR(512)
+
+create table property_feature (
+      property_id int unsigned NOT NULL,
+      feature_id smallint unsigned NOT NULL,
+      PRIMARY KEY (property_id, feature_id)
+);
+
+CREATE TABLE properties(
+	id SERIAL PRIMARY KEY
+	, price DECIMAL(10,2)
+	, title VARCHAR(512)
+	, address VARCHAR(512)    
+    , url NVARCHAR(MAX)    
+);
+CREATE TABLE images(
+	id SERIAL PRIMARY KEY
+	,property_id INT	
+	,url NVARCHAR(MAX)
+	
 );

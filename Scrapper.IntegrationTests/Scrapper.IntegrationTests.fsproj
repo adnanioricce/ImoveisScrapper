@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
     <GenerateProgramFile>false</GenerateProgramFile>
@@ -9,18 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json" />
     <Content Include="sample.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Compile Include="Env.fs" />
-    <Content Include="appsettings.json" />
-    <Content Include="Extractions\imoveis.1_23092023_03074752.json">
+    <Content Include="Extractions\VivaReal\Json\imoveis.1_23092023_03074752.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Extractions\imoveis.2_23092023_03204713.json">
+    <Content Include="Extractions\VivaReal\Json\imoveis.2_23092023_03204713.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Extractions\imoveis.3_23092023_03254733.json">
+    <Content Include="Extractions\VivaReal\Json\imoveis.3_23092023_03254733.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Extractions\Higarashi\Json\imovel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Extractions\Higarashi\Html\imoveis.3.f5150c4b-2eaf-4e34-a9d5-b5e6b6919aa7.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Compile Include="ExtractionTests.fs" />
@@ -44,6 +50,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Scrapper.Console\Scrapper.Console.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Extractions\Html\**" />
   </ItemGroup>
 
 </Project>

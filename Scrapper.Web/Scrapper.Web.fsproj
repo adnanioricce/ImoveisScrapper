@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Scrapper.Web.App</AssemblyName>
     <EnableDefaultContentItems>false</EnableDefaultContentItems>
     <UserSecretsId>c38727b8-699e-4d49-b57c-7c0ac3680e92</UserSecretsId>

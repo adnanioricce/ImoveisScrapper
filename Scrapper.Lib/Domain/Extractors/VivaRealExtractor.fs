@@ -1,4 +1,4 @@
-module Scrapper.Lib.Domain
+namespace Scrapper.Lib.Domain
 
 open ImoveisScrapper
 open Scrapper.Lib.DAL
@@ -81,4 +81,9 @@ function parsePropertyCard(doc) {
             Endereco = d.address
             Adicionais = d.amenities |> String.concat ";"
             Images = d.images
+            Features = [|
+                { Name = "Banheiros"; Value = {| Quantidade = (parseInt d.banheiros)  |} }
+                { Name = "Quartos"; Value = {| Quantidade = (parseInt (string d.quartos))  |} }
+                { Name = "Vagas"; Value = {| Quantidade = (parseInt (string d.vagas))  |} }
+            |] 
         }
