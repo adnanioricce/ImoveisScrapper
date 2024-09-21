@@ -7,16 +7,14 @@ open System.Threading.Tasks
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 open ImoveisScrapper
-
 module Program =
     let createHostBuilder args =
         Host.CreateDefaultBuilder(args)
             .ConfigureServices(fun hostContext services ->
                 services.AddHostedService<ExtracterWorker>() |> ignore)
-
     [<EntryPoint>]
-    let main args =
-        let webEngine = Env.webEngine
+    let main (args: string array) : int =
+        let webEngine: string = Env.webEngine
         let webEngineExists = System.IO.File.Exists(webEngine)
         printfn "%s -> file exists? %s" webEngine (if webEngineExists then "Yes" else "No")
         createHostBuilder(args).Build().Run()

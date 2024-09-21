@@ -7,10 +7,7 @@
   </PropertyGroup>
 
 
-  <ItemGroup>
-    <Compile Include="ExtracterWorker.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
+  
 
 
   <ItemGroup>
@@ -25,5 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Scrapper.Lib\Scrapper.Lib.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtracterWorker.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
