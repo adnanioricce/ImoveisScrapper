@@ -1,0 +1,703 @@
+﻿[
+    {
+        "title": "Casa com 2 Quartos \u00E0 Venda, 160m\u00B2",
+        "address": "Estrada do Tingui, 2400 - Campo Grande, Rio de Janeiro - RJ",
+        "amenities": [
+            "Cozinha",
+            "Lavanderia",
+            "TV a cabo",
+            "\u00C1rea de servi\u00E7o",
+            "Aceita animais"
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": 4,
+        "images": [
+            "https://resizedimgs.vivareal.com/crop/286x200/named.images.sp/fe7496d8b9876adfe44a2a006bd81261/foto-1-de-casa-com-2-quartos-a-venda-160m-em-campo-grande-rio-de-janeiro.jpg",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 150.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 77m\u00B2",
+        "address": "Avenida Dom Joaquim Mamede da Silva Leite, 40 - Jardim do Lago, Campinas - SP",
+        "amenities": [
+            "Varanda",
+            "Lavanderia"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 320.000      Pre\u00E7o abaixo do mercado",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 4 Quartos \u00E0 Venda, 150m\u00B2",
+        "address": "Vila Rica, Campinas - SP",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": 4,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 350.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 3 Quartos \u00E0 Venda, 140m\u00B2",
+        "address": "Bairro das Palmeiras, Campinas - SP",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 350.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 3 Quartos \u00E0 Venda, 110m\u00B2",
+        "address": "Arma\u00E7\u00E3o, Florian\u00F3polis - SC",
+        "amenities": [
+            "Churrasqueira",
+            "Varanda",
+            "Aceita animais",
+            "\u00C1rea de servi\u00E7o",
+            "Perto de vias de acesso",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 639.000      Pre\u00E7o abaixo do mercado",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 67m\u00B2",
+        "address": "Avenida Presidente Tancredo Neves, 0 - Jabotiana, Aracaju - SE",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 280.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 2000m\u00B2",
+        "address": "Avenida das Brom\u00E9lias - Parque Caet\u00EA, Bragan\u00E7a Paulista - SP",
+        "amenities": [
+            "Espa\u00E7o verde / Parque",
+            "Energia el\u00E9trica",
+            "Rua asfaltada",
+            "Po\u00E7o artesiano"
+        ],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 130.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 2 Quartos \u00E0 Venda, 89m\u00B2",
+        "address": "Rua Lil\u00E1s - Outeiro, Araruama - RJ",
+        "amenities": [
+            "Cozinha",
+            "Geminada",
+            "Varanda",
+            "Garagem",
+            "\u00C1rea de servi\u00E7o"
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 220.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 75m\u00B2",
+        "address": "S\u00E3o Bernardo, Campinas - SP",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 350.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 4 Quartos \u00E0 Venda, 200m\u00B2",
+        "address": "Parque Fazendinha, Campinas - SP",
+        "amenities": [
+            "Churrasqueira",
+            "Lavanderia"
+        ],
+        "banheiros": "4",
+        "quartos": 4,
+        "vagas": 4,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 580.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 202m\u00B2",
+        "address": "Parque Vila Nobre, S\u00E3o Jos\u00E9 do Rio Preto - SP",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 118.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 2 Quartos \u00E0 Venda, 54m\u00B2",
+        "address": "Residencial Macedo Teles I, S\u00E3o Jos\u00E9 do Rio Preto - SP",
+        "amenities": [
+            "Churrasqueira",
+            "Aceita animais",
+            "Garagem",
+            "\u00C1rea de servi\u00E7o",
+            "Playground",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 150.000      Pre\u00E7o abaixo do mercado",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 85m\u00B2",
+        "address": "Vila Anchieta, S\u00E3o Jos\u00E9 do Rio Preto - SP",
+        "amenities": [
+            "Aceita animais",
+            "Garagem",
+            "\u00C1rea de servi\u00E7o",
+            "Cozinha",
+            "Interfone",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 260.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 67m\u00B2",
+        "address": "Avenida Presidente Tancredo Neves, 0 - Jabotiana, Aracaju - SE",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 280.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 300m\u00B2",
+        "address": "Avenida das Palmeiras - Bairro da Grama, Ca\u00E7apava - SP",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 260.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 80m\u00B2",
+        "address": "Rua Afonso Aferri, 194 - Jardim Vitoria, Monte Mor - SP",
+        "amenities": [
+            "Varanda gourmet"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 396.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 3 Quartos \u00E0 Venda, 143m\u00B2",
+        "address": "Rua Everton Pugim de Abreu, 112 - Jardim Carmem, S\u00E3o Jos\u00E9 dos Pinhais - PR",
+        "amenities": [
+            "TV a cabo",
+            "Conex\u00E3o \u00E0 internet",
+            "Cozinha",
+            "Espa\u00E7o verde / Parque"
+        ],
+        "banheiros": null,
+        "quartos": 3,
+        "vagas": 3,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 290.000      Pre\u00E7o abaixo do mercado",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 2 Quartos \u00E0 Venda, 69m\u00B2",
+        "address": "Nova Redentora, S\u00E3o Jos\u00E9 do Rio Preto - SP",
+        "amenities": [
+            "Piscina",
+            "Churrasqueira",
+            "Elevador",
+            "Varanda",
+            "Quintal",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 400.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 251m\u00B2",
+        "address": "Floresta - PR",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 75.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa de condom\u00EDnio com 3 Quartos \u00E0 Venda, 120m\u00B2",
+        "address": "Rua Jakeri, 117 - Vila Aeroporto, Campinas - SP",
+        "amenities": [
+            "Piscina para adulto",
+            "Quintal",
+            "Churrasqueira",
+            "Lavanderia",
+            "Piscina"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 400.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 2 Quartos \u00E0 Venda, 147m\u00B2",
+        "address": "Km 18, Osasco - SP",
+        "amenities": [
+            "Cozinha",
+            "Lavanderia",
+            "\u00C1rea de servi\u00E7o"
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 340.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 92m\u00B2",
+        "address": "Rua Vin\u00EDcios de Moraes, 228 - Novo Cavaleiro, Maca\u00E9 - RJ",
+        "amenities": [
+            "Cozinha",
+            "Elevador",
+            "\u00C1rea de servi\u00E7o"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 450.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 4 Quartos \u00E0 Venda, 130m\u00B2",
+        "address": "Rua Corn\u00E9lio Kloster - Nereidas, Guaratuba - PR",
+        "amenities": [
+            "Churrasqueira",
+            "Cozinha",
+            "Lavanderia",
+            "Vista para o mar",
+            "Aceita animais"
+        ],
+        "banheiros": "4",
+        "quartos": 4,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 485.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 72m\u00B2",
+        "address": "Rua Zacarias de Gois - Parque Colonial, S\u00E3o Paulo - SP",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 983.980",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 3 Quartos \u00E0 Venda, 160m\u00B2",
+        "address": "Rua das \u00C1rvores - Picadas do Sul, S\u00E3o Jos\u00E9 - SC",
+        "amenities": [
+            "Mobiliado",
+            "Churrasqueira",
+            "Varanda",
+            "Arm\u00E1rio na cozinha",
+            "Cozinha grande",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 4,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 579.500",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 2 Quartos \u00E0 Venda, 70m\u00B2",
+        "address": "Jardim Residencial Vetorasso, S\u00E3o Jos\u00E9 do Rio Preto - SP",
+        "amenities": [
+            "Elevador",
+            "Aceita animais",
+            "Garagem",
+            "\u00C1rea de servi\u00E7o",
+            "Sal\u00E3o de festas",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 300.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 1251m\u00B2",
+        "address": "Rua Nova Igua\u00E7u, 135 - Jardim Marileia, Rio das Ostras - RJ",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 699.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 2 Quartos \u00E0 Venda, 63m\u00B2",
+        "address": "Centro, S\u00E3o Jos\u00E9 dos Pinhais - PR",
+        "amenities": [
+            "Churrasqueira",
+            "Playground",
+            "Vista para o mar",
+            "Espa\u00E7o gourmet"
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 431.100",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 2 Quartos \u00E0 Venda, 71m\u00B2",
+        "address": "Rua Felizardo, 491 - Jardim Bot\u00E2nico, Porto Alegre - RS",
+        "amenities": [
+            "Piscina",
+            "Mobiliado",
+            "Churrasqueira",
+            "Elevador",
+            "Condom\u00EDnio fechado",
+            "..."
+        ],
+        "banheiros": "2",
+        "quartos": 2,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 742.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Sala/Conjunto    \u00E0 Venda, 52m\u00B2",
+        "address": "Rua Jos\u00E9 Paulino, 416 - Centro, Campinas - SP",
+        "amenities": [],
+        "banheiros": "2",
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 199.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Apartamento com 3 Quartos \u00E0 Venda, 78m\u00B2",
+        "address": "BAIRRO PINHEIRINHO, Vinhedo - SP",
+        "amenities": [
+            "Varanda gourmet"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 450.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 511m\u00B2",
+        "address": "Rodovia Amaral Peixoto, 10 - Balne\u00E1rio das Gar\u00E7as, Rio das Ostras - RJ",
+        "amenities": [
+            "Condom\u00EDnio fechado"
+        ],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 190.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Casa com 3 Quartos \u00E0 Venda, 104m\u00B2",
+        "address": "Iguara\u00E7u - PR",
+        "amenities": [
+            "\u00C1rea de servi\u00E7o"
+        ],
+        "banheiros": "2",
+        "quartos": 3,
+        "vagas": 2,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 230.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 360m\u00B2",
+        "address": "Jardim Catuai III, Apucarana - PR",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 150.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 201m\u00B2",
+        "address": "Jardim Copacabana, Campo Mour\u00E3o - PR",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 190.000",
+        "status": "Indispon\u00EDvel"
+    },
+    {
+        "title": "Lote/Terreno    \u00E0 Venda, 500m\u00B2",
+        "address": "Estrada Hisaichi Take Bayashi, 7080 - Jardim Colonial, Atibaia - SP",
+        "amenities": [],
+        "banheiros": null,
+        "quartos": null,
+        "vagas": null,
+        "images": [
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png",
+            "https://cdn1.vivareal.com/p/1-d8e27ca/v/static/app/img/pixel.png"
+        ],
+        "price": "R$ 60.000",
+        "status": "Indispon\u00EDvel"
+    }
+]

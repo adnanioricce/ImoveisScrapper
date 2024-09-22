@@ -6,15 +6,6 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
-
-  
-
-
-  <ItemGroup>
-    <None Include="Dockerfile" />
-    <Compile Include="DownloaderWorker.fs" />
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.*" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
@@ -23,8 +14,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Scrapper.Lib\Scrapper.Lib.fsproj" />
   </ItemGroup>
-  <ItemGroup>
+  
+  <ItemGroup>    
+    <Compile Include="DownloaderWorker.fs" />
     <Compile Include="ExtracterWorker.fs" />
     <Compile Include="Program.fs" />
+    <None Include="Dockerfile" />
   </ItemGroup>
 </Project>

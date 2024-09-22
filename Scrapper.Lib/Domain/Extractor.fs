@@ -7,6 +7,8 @@ open Scrapper.Lib.Utils.ErrorHandling
 module ExtractorService =
     open PuppeteerSharp    
     open Scrapper.Lib.Domain.Commands
+    open System.IO
+    open System
     type ExtractArgs = {
         Url:string
         Headless: bool
@@ -24,17 +26,34 @@ module ExtractorService =
     let downloadPage (args: ExtractArgs) = async {
         try 
             let options = LaunchOptions(Headless = args.Headless,ExecutablePath = args.ExecutablePath,Args = [|"disable-gpu";"--no-sandbox"|])        
-            printfn "Executable Path %s" options.ExecutablePath
+            // printfn "Executable Path %s" options.ExecutablePath
             use! browser = Puppeteer.LaunchAsync(options,loggerFactory = (args.LoggerFactory |> Option.defaultValue (new Scrapper.Logger.LoggerFactory()))) |> Async.AwaitTask
             use! page = browser.NewPageAsync() |> Async.AwaitTask
             let! response = page.GoToAsync(args.Url) |> Async.AwaitTask
+            if not response.Ok then
+                printfn "failed to download page %s -> %s" (args.Url) response.StatusText
             let! responseText = response.TextAsync() |> Async.AwaitTask
+            use fs = File.Open(sprintf "%s.txt" (DateTime.Now.ToString("ddMMyyyy_hhmmss")),FileMode.OpenOrCreate)
+            fs.Write(System.Text.Encoding.UTF8.GetBytes(responseText))
+            // printfn "GET %s response text \n %A" args.Url responseText
             return Result.Ok (HtmlPage responseText)
         with
         | ex -> return Result.Error (AppError.Unknown ex)
     }
+    let downloadPageByUrl (url:string) = async {
+        let args:ExtractArgs = {
+            Headless = true
+            Url = url
+            ExecutablePath = Env.webEngine
+            JsCode = ""
+            SavePage = None
+            LoggerFactory = None
+        }
+        return! downloadPage args
+    }
+
     let evaluateJsWith (args: ExtractArgs) = async {
-        let saveResponse (r:IResponse) = async {            
+        let saveResponse (r:IResponse) = async {
             match args.SavePage with
             | Some savePageAction -> 
                 let! responseText = r.TextAsync() |> Async.AwaitTask
@@ -45,7 +64,7 @@ module ExtractorService =
             | None ->
                 return Result.Error (AppError.Unknown (exn (sprintf "empty page at url %s" args.Url)))
         }
-        let savePage (r:HtmlPage) = async {            
+        let savePage (r:HtmlPage) = async {
             match args.SavePage with
             | Some savePageAction ->                 
                 return! (savePageAction r)

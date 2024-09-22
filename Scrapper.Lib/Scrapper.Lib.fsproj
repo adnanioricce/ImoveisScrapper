@@ -20,8 +20,9 @@
     <Compile Include="Domain\PersistJob.fs" />
     <Compile Include="Domain\DocStorage.fs" />
     <Compile Include="Domain\Extractors\HigashiImoveisExtractor.fs" />
-    <Compile Include="Domain\Extractors\VivaRealExtractor.fs" />
+    <Compile Include="Domain\Extractors\VivaRealExtractor.fs" />    
     <Compile Include="Jobs.fs" />
+    <Compile Include="Extractor.fs" />
     <Content Include="README.md" />
   </ItemGroup>
 

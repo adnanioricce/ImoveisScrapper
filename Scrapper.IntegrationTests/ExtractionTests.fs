@@ -30,8 +30,9 @@ let configValue: GetConfigurationValue =
         | "WebEngine:ExePath" -> "/nix/store/yw09kd2wvfd15mnllj1khxpyg4xc8c1v-chromium-126.0.6478.126/bin/chromium"
         | "WebEngine:Headless" -> "false"
         | "Mongo:ConnectionUrl" -> "mongodb://root:example@localhost:27018/"
+        | _ -> ""
   
-let jsCode = """() => {
+let vivaRealExtracterCode = """() => {
 function parsePropertyCard(doc) {
   const propertyCard = {};
 
@@ -81,14 +82,14 @@ function parsePropertyCard(doc) {
 [<Theory>]
 [<InlineData("")>]
 let ``the extraction is expected to receive a url and a js code string to manipulate the page and return a list of objects `` () = async {
-    let! dtos = ExtractorService.extractPage<VivaRealCardDto array> "https://www.vivareal.com.br/venda/" jsCode
+    let! dtos = ExtractorService.extractPage<VivaRealCardDto array> "https://www.vivareal.com.br/venda/" vivaRealExtracterCode
     Assert.NotEmpty(dtos)
 }
 
 [<Fact>]
 let `` test higarashi extraction from source ``() = async {
     let url = "https://www.higashiimoveis.com.br/alugar"
-    let jsCode = """
+    let higarashiExtracterCode = """
     () => {
       const listings = document.querySelectorAll('.resultado_lista');
       const results = [];
@@ -125,7 +126,7 @@ let `` test higarashi extraction from source ``() = async {
     let savePageMock: SavePage =
       fun (response:string) -> async {
         Directory.CreateDirectory("./out") |> ignore
-        File.WriteAllText(sprintf "./out/%s.json" (System.Guid.NewGuid().ToString()),response)
+        File.WriteAllText(sprintf "./out/%s.html" (System.Guid.NewGuid().ToString()),response)
         let data: PageDownloadedData = {
           Id = "0"
           Url = ""
@@ -136,7 +137,7 @@ let `` test higarashi extraction from source ``() = async {
       }
     let args:ExtractArgs = {
       Url = url
-      JsCode = jsCode
+      JsCode = higarashiExtracterCode
       Headless = true
       ExecutablePath = Env.webEngine
       SavePage = Some savePageMock
@@ -152,7 +153,8 @@ let `` test higarashi is downloadable ``() = async {
       fun key ->
         match key with
         | "WebEngine:ExePath" -> "/nix/store/yw09kd2wvfd15mnllj1khxpyg4xc8c1v-chromium-126.0.6478.126/bin/chromium"
-        | "WebEngine:Headless" -> "false"            
+        | "WebEngine:Headless" -> "false"
+        | _ -> ""
     let savePage: SavePage =
       fun htmlPage -> async {        
         let data: PageDownloadedData = {
@@ -177,7 +179,7 @@ let `` test higarashi is downloadable ``() = async {
 [<Fact>]
 let `` test higarashi extraction from saved html ``() = async {
     let url = "https://www.higashiimoveis.com.br/alugar"
-    let jsCode = """
+    let higarashiExtracterCode = """
     () => {
       const listings = document.querySelectorAll('.resultado_lista');
       const results = [];
@@ -225,7 +227,7 @@ let `` test higarashi extraction from saved html ``() = async {
       }
     let args:ExtractArgs = {
       Url = url
-      JsCode = jsCode
+      JsCode = higarashiExtracterCode
       Headless = true
       ExecutablePath = Env.webEngine
       SavePage = Some savePageMock
@@ -277,6 +279,7 @@ let `` Test download and extraction ``(url:string) = async {
       match _event with
       | PageDownloaded data ->
          extractPageCmd data
+      | _ -> failwith "Invalid event passed to downloaded event handler" 
   let! res =    
     downloadedEvent
     >>= extractPageDownloaded
@@ -303,6 +306,7 @@ let `` Test extraction is loadable from doc storage ``(url:string) = async {
       match _event with
       | PageDownloaded data ->
          extractPageCmd data
+      | _ -> failwith "Invalid event passed to downloaded event handler" 
            
   let! res =    
     downloadedEvent
@@ -353,6 +357,7 @@ let `` Test whole process ``() = async {
       match _event with
       | PageDownloaded data ->
          extractPageCmd data
+      | _ -> failwith "Invalid event passed to downloaded event handler" 
   let loadProperty = scrapStorage.LoadProperty
   let getExtractionById = loadProperty
   
@@ -381,24 +386,22 @@ let `` Test whole process ``() = async {
   
   let saveExtraction: 'a -> Async<Result<DomainEvent,AppError>> =
     fun data -> async {
+      
       return Result.Ok (DomainEvent.ExtractionSaved 0)
     }
   let raiseEvent: DomainEvent -> Async<Result<unit,AppError>> =
     fun _event -> async {
       return Result.Ok ()
     }
-  let transformExtraction = transformExtractionCmd getExtractionById transformExtraction saveExtraction raiseEvent
+  let transformExtraction = 
+    transformExtractionCmd 
+      getExtractionById 
+      transformExtraction 
+      saveExtraction 
+      raiseEvent
   let! res =    
     downloadedEvent
     >>= extractPageDownloaded
     >>= (fun (PageExtracted e) -> transformExtraction e)
-  // let parser = HigashiImoveisExtractor.parseHtml
-  // let saveExtraction (properties) = async {
-  //   return Ok 0
-  // }
-  // let cmd = HigashiImoveisExtractor.extractPageCmd parser saveExtraction 
-  // let res =
-  //   htmlString   
-  //   |> cmd
   return ()
 }

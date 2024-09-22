@@ -5,6 +5,7 @@ open System.Text
 open ImoveisScrapper
 open ImoveisScrapper.Db
 open Scrapper
+open Microsoft.Extensions.Configuration
 let loadEnv () = 
     let currentEnv = 
         let value = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
@@ -25,7 +26,17 @@ let loadEnv () =
 [<EntryPoint>]
 let main (argv:string array) = 
     loadEnv()
+    let config = 
+        ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .AddEnvironmentVariables()
+            .Build()
     let template index = sprintf "https://www.vivareal.com.br/venda/?pagina=%d" index        
+    let getConfigValue str = config.[str]
     
-    Jobs.runExtract template 1 Jobs.NonEmpty
+    // Jobs.runExtract template 1 Jobs.NonEmpty
+    let agent = HigashiImoveisExtractor.start getConfigValue
+    printfn "Processing messages..."
+    while true do
+        Async.Sleep(TimeSpan.FromSeconds(5)) |> Async.RunSynchronously
     0

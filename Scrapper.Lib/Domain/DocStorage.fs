@@ -30,7 +30,9 @@ module HtmlStorage =
                 let dto:PageDownloadedData = { Id = htmlDoc.Id.ToString(); Url = ""; SavedAt = DateTime.Now; Content = htmlDoc.Content }
                 return Ok dto
             with
-            | ex -> return Error (AppError.DatabaseFailure ex)
+            | ex ->
+                printfn "failed to save content: %A" ex
+                return Error (AppError.DatabaseFailure ex)
         }
         member this.LoadHtml(id: ObjectId) = async {        
             let pred = fun (doc:HtmlDocument) -> doc.Id
@@ -64,14 +66,56 @@ module ScrapStorage =
                     let doc = { Id = BsonObjectId(ObjectId.GenerateNewId());Content = content; SavedAt = DateTime.Now }
                     do! propertyCollection.InsertOneAsync(doc) |> Async.AwaitTask
                     Scrapper.Logger.info "Property data saved to MongoDB" [||] |> ignore
-                    return Result.Ok (doc.Id.ToString())
+                    return Ok (doc.Id.ToString())
                 with
-                | ex -> return Result.Error (AppError.DatabaseFailure ex)
-            }
+                | ex -> 
+                    printfn "failed to save content: %A" ex
+                    return Error (AppError.DatabaseFailure ex)
+            }        
         member this.LoadProperty(id: string) = async {            
             let objId = ObjectId(id)
             let bsonId = BsonObjectId(objId)
             let filter = Builders<ScrappedDocument>.Filter.Eq("_id", bsonId)
+            let! cursor = propertyCollection.FindAsync(filter) |> Async.AwaitTask
+            let! result = cursor.FirstOrDefaultAsync() |> Async.AwaitTask
+            return Some result
+        }
+    //let private client = new MongoClient("mongodb://localhost:27017")
+    let create (url:string) = StandardScrapStorage(new MongoClient(url))
+module ExtractionStorage =
+    type ExtractedData<'body> = {
+        Id: BsonObjectId
+        Body: 'body
+        SavedAt: DateTime
+    }
+    type StandardScrapStorage(client:IMongoClient) =
+        let database = client.GetDatabase("imoveis")
+        // let propertyCollection = database.GetCollection<ScrappedDocument>("properties")
+        let getCollection = 
+            let collectionName = sprintf "%s_properties" (typeof<'a>.Name)
+            database.GetCollection<ExtractedData<'a>>( collectionName )
+        member this.SaveExtraction: SaveExtraction<'a,string> =
+            fun (content:'a) -> async {
+                try
+                    let collectionName = sprintf "%s_properties" typeof<'a>.Name
+                    
+                    let propertyCollection = database.GetCollection<ExtractedData<'a>>( collectionName )
+                    let doc = { Id = BsonObjectId(ObjectId.GenerateNewId());Body = content; SavedAt = DateTime.Now }
+                    printfn "saving doc %s in collection %s" (string doc.Id) collectionName
+                    do! propertyCollection.InsertOneAsync(doc) |> Async.AwaitTask
+                    // Scrapper.Logger.info "Property data saved to MongoDB" [||] |> ignore
+                    return Ok (doc.Id.ToString())
+                with
+                | ex -> 
+                    printfn "failed to save content: %A" ex
+                    return Error (AppError.DatabaseFailure ex)
+            }        
+        member this.LoadExtraction<'a>(id: string) = async {            
+            let objId = ObjectId(id)
+            let bsonId = BsonObjectId(objId)
+            let filter = Builders<ExtractedData<'a>>.Filter.Eq("_id", bsonId)
+            let collectionName = sprintf "%s_properties" typeof<'a>.Name
+            let propertyCollection = database.GetCollection<ExtractedData<'a>>( collectionName )
             let! cursor = propertyCollection.FindAsync(filter) |> Async.AwaitTask
             let! result = cursor.FirstOrDefaultAsync() |> Async.AwaitTask
             return Some result
