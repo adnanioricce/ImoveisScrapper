@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <UserSecretsId>dotnet-Scrapper.Web-918b78ea-412c-43f8-9c29-9770c38830bd</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Include="Worker.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.47.0" />
+  </ItemGroup>
+</Project>

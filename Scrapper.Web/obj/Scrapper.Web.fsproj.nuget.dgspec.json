@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj": {}
+  },
+  "projects": {
+    "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
+        "projectName": "Scrapper.Web",
+        "projectPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
+        "packagesPath": "/home/adnangonzaga/.nuget/packages/",
+        "outputPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/adnangonzaga/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/FSharp/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.400-beta.24321.3, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[9.0.0-preview.6.24327.7, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.Playwright": {
+              "target": "Package",
+              "version": "[1.47.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
