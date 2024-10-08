@@ -4,20 +4,20 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/adnangonzaga/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/adnangonzaga/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\aloricce\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/home/adnangonzaga/.nuget/packages/" />
+    <SourceRoot Include="C:\Users\aloricce\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/9.0.0-preview.6.24327.7/buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/9.0.0-preview.6.24327.7/buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\9.0.0-preview.6.24327.7\buildTransitive\net8.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\9.0.0-preview.6.24327.7\buildTransitive\net8.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_Playwright Condition=" '$(PkgMicrosoft_Playwright)' == '' ">/home/adnangonzaga/.nuget/packages/microsoft.playwright/1.47.0</PkgMicrosoft_Playwright>
-    <PkgMicrosoft_Extensions_Hosting Condition=" '$(PkgMicrosoft_Extensions_Hosting)' == '' ">/home/adnangonzaga/.nuget/packages/microsoft.extensions.hosting/9.0.0-preview.6.24327.7</PkgMicrosoft_Extensions_Hosting>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/adnangonzaga/.nuget/packages/fsharp.core/8.0.400-beta.24321.3</PkgFSharp_Core>
+    <PkgMicrosoft_Playwright Condition=" '$(PkgMicrosoft_Playwright)' == '' ">C:\Users\aloricce\.nuget\packages\microsoft.playwright\1.47.0</PkgMicrosoft_Playwright>
+    <PkgMicrosoft_Extensions_Hosting Condition=" '$(PkgMicrosoft_Extensions_Hosting)' == '' ">C:\Users\aloricce\.nuget\packages\microsoft.extensions.hosting\9.0.0-preview.6.24327.7</PkgMicrosoft_Extensions_Hosting>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\aloricce\.nuget\packages\fsharp.core\9.0.100-beta.24422.2</PkgFSharp_Core>
   </PropertyGroup>
 </Project>

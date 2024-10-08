@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "FSharp.Core/8.0.400-beta.24321.3": {
+      "FSharp.Core/9.0.100-beta.24422.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -786,15 +786,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/8.0.400-beta.24321.3": {
-      "sha512": "iRTyTSKHMIHuq1RYsvEC3Q5/+wrq6J7zcANEpras0+26CR5/GMKSbmlQjF9z6wbS3miQI8/FPbvuygLYAAYeBg==",
+    "FSharp.Core/9.0.100-beta.24422.2": {
+      "sha512": "NmzJmz7DS6h+kAW14ooG396DAr2xU8NbAj73RNZvQg+aNaLC0PLJYcvsQ8r6Hb0ZUZxKnjxTn3ROsQiSDSNaKg==",
       "type": "package",
-      "path": "fsharp.core/8.0.400-beta.24321.3",
+      "path": "fsharp.core/9.0.100-beta.24422.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.8.0.400-beta.24321.3.nupkg.sha512",
+        "fsharp.core.9.0.100-beta.24422.2.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -2323,31 +2323,34 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "FSharp.Core >= 8.0.400-beta.24321.3",
+      "FSharp.Core >= 9.0.100-beta.24422.2",
       "Microsoft.Extensions.Hosting >= 9.0.0-preview.6.24327.7",
       "Microsoft.Playwright >= 1.47.0"
     ]
   },
   "packageFolders": {
-    "/home/adnangonzaga/.nuget/packages/": {}
+    "C:\\Users\\aloricce\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
+      "projectUniqueName": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj",
       "projectName": "Scrapper.Web",
-      "projectPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
-      "packagesPath": "/home/adnangonzaga/.nuget/packages/",
-      "outputPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/obj/",
+      "projectPath": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj",
+      "packagesPath": "C:\\Users\\aloricce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/adnangonzaga/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\aloricce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/FSharp/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2360,7 +2363,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "all"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -2369,7 +2373,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.0.400-beta.24321.3, )",
+            "version": "[9.0.100-beta.24422.2, )",
             "generatePathProperty": true
           },
           "Microsoft.Extensions.Hosting": {
@@ -2399,7 +2403,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

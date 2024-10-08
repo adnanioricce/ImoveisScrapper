@@ -1,26 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj": {}
+    "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj": {}
   },
   "projects": {
-    "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj": {
+    "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
+        "projectUniqueName": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj",
         "projectName": "Scrapper.Web",
-        "projectPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/Scrapper.Web.fsproj",
-        "packagesPath": "/home/adnangonzaga/.nuget/packages/",
-        "outputPath": "/home/adnangonzaga/repos/ImoveisScrapper/Scrapper.Web/obj/",
+        "projectPath": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\Scrapper.Web.fsproj",
+        "packagesPath": "C:\\Users\\aloricce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aloricce\\source\\repos\\ImoveisScrapper\\Scrapper.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adnangonzaga/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\aloricce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/FSharp/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,7 +36,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -42,7 +46,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[8.0.400-beta.24321.3, )",
+              "version": "[9.0.100-beta.24422.2, )",
               "generatePathProperty": true
             },
             "Microsoft.Extensions.Hosting": {
@@ -72,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100-preview.6.24328.19/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
