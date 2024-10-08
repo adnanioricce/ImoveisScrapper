@@ -103,6 +103,10 @@ module Program =
 
             return linkResults
         }
+    let saveAsCsv (cards:Lopes.LopesListing seq) =
+      let rowTempl (card:Lopes.LopesListing) = sprintf "%s;%s;%s;%s;%A"  card.Link card.ImageUrl card.Description card.Location card.Price
+      cards |> Seq.map rowTempl
+      
 
     let run argv = async {
       // let url = "https://www.redimoveis.com.br/imoveis/a-venda"
@@ -117,15 +121,15 @@ module Program =
       let! _ = page.GotoAsync(url) |> Async.AwaitTask
       let! links = Lopes.scrapPages page
       let! cards = Lopes.scrapCards page url
-      // Run the scraper
-      return yield! cards
+      saveAsCsv cards
+      // Run the scraper      
       // let links = scrapeWebsite url |> Async.RunSynchronously
 
       // Print the extracted links
       for linkUrl in links do
-        
-        |> Array.map (fun link -> Lopes.scrapCards link)        
-        |> Array.iter (fun link -> printfn "Found link: %s" link)
+        let! _ = page.GotoAsync(url) |> Async.AwaitTask
+        let! cards = Lopes.scrapCards page linkUrl        
+
       Play.closeBrowser browser |> Async.RunSynchronously
       0 // return an integer exit code
     }
