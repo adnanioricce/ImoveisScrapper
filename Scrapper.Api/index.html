@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Lista de Imóveis</h2>
+
+<table id="imoveisTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Imagem</th>
+            <th>Descrição</th>
+            <th>Endereço</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data will be inserted here by JavaScript -->
+    </tbody>
+</table>
+
+<script>
+// Function to fetch and display data in the table
+async function fetchImoveis() {
+    try {
+        const response = await fetch('http://localhost:8080/imoveis');
+        const imoveis = await response.json();
+
+        const tableBody = document.querySelector('#imoveisTable tbody');
+        tableBody.innerHTML = ''; // Clear the table body before inserting
+
+        imoveis.forEach(imovel => {
+            const row = document.createElement('tr');
+
+            // Insert table columns with data
+            row.innerHTML = `
+                <td>${imovel.id}</td>
+                <td>${imovel.codigo}</td>
+                <td><img src="${imovel.imagem_url}" alt="Imagem"></td>
+                <td>${imovel.descricao}</td>
+                <td>${imovel.endereco}</td>
+                <td>${imovel.preco}</td>
+            `;
+
+            // Append row to table body
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+// Fetch data when the page loads
+window.onload = fetchImoveis;
+</script>
+
+</body>
+</html>
