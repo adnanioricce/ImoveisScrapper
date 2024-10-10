@@ -1,0 +1,20 @@
+services:
+  scrapper.db:
+    image: adnanioricce/imscrapperdb
+    build:
+      context: Database
+    environment:
+      - DB_CONNECTION_STRING="Host=imscrapperdb;Database=imscrapperdb;Username=imscrapper;Password=impass"
+    ports:
+      - "5444:5432"
+
+  scrapper.api:
+    image: adnanioricce/imscrapperapi
+    build:
+      context: Scrapper.Giraffe.Api
+    environment:
+      - DB_CONNECTION_STRING=Host=imscrapperdb;Database=imscrapperdb;Username=imscrapper;Password=impass
+    ports:
+      - "8090:8090"
+    depends_on:
+      - scrapper.db

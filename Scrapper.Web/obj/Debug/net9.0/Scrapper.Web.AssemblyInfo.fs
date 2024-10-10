@@ -11,7 +11,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("Scrapper.Web")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a018117a2ed8b682397d1184d0cacb8fb389013")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a90c3baa769639f4d0994df421aa2ea14e59ad45")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("Scrapper.Web")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("Scrapper.Web")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

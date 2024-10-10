@@ -7,6 +7,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scrapper.Api", "Scrapper.Ap
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scrapper.Web", "Scrapper.Web\Scrapper.Web.fsproj", "{C8D1BAED-18FD-47D2-BEBF-5A1DC01B0F12}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scrapper.Giraffe.Api", "Scrapper.Giraffe.Api\Scrapper.Giraffe.Api.fsproj", "{3BDF688B-925F-4576-9A6E-FC3A97A0205B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C8D1BAED-18FD-47D2-BEBF-5A1DC01B0F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8D1BAED-18FD-47D2-BEBF-5A1DC01B0F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8D1BAED-18FD-47D2-BEBF-5A1DC01B0F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDF688B-925F-4576-9A6E-FC3A97A0205B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDF688B-925F-4576-9A6E-FC3A97A0205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDF688B-925F-4576-9A6E-FC3A97A0205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDF688B-925F-4576-9A6E-FC3A97A0205B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
