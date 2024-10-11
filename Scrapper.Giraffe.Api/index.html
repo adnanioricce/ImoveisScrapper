@@ -3,86 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imóveis Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        img {
-            width: 100px;
-            height: auto;
-        }
-    </style>
+    <title>Imóveis</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
 </head>
 <body>
 
-<h2>Lista de Imóveis</h2>
+<div class="container">
+    <h3 class="center-align">Lista de Imóveis</h3>
 
-<table id="imoveisTable">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Código</th>
-            <th>Imagem</th>
-            <th>Descrição</th>
-            <th>Endereço</th>
-            <th>Preço</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Data will be inserted here by JavaScript -->
-    </tbody>
-</table>
+    <!-- Button to download Excel file -->
+    <div class="row center-align">
+        <a id="download-btn" class="waves-effect waves-light btn-large">
+            <i class="material-icons left">Exportar para excel</i>
+        </a>
+    </div>
+    <!-- Table for displaying Imoveis data -->
+    <table class="highlight responsive-table">
+        <thead>
+            <tr>
+                <th>Link</th>
+                <th>Imagem</th>
+                <th>Descrição</th>
+                <th>Endereço</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody id="imoveis-table-body">
+            <!-- Rows will be injected by JavaScript -->
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Materialize JS and Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
-// Function to fetch and display data in the table
-async function fetchImoveis() {
-    try {
-        const response = await fetch('http://localhost:8080/imoveis');
-        const imoveis = await response.json();
+    // Example of fetching data from the API and displaying it
+    $(document).ready(function() {
+        fetch('/api/imoveis')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('imoveis-table-body');
+                data.forEach(imovel => {
+                    const row = `
+                        <tr>
+                            <td><a href="${imovel.url}" target="_blank">${imovel.link}</a></td>
+                            <td><img src="${imovel.imagem_url}" alt="Imagem do Imóvel" class="responsive-img" width="100"></td>
+                            <td>${imovel.descricao}</td>
+                            <td>${imovel.endereco}</td>
+                            <td>${imovel.preco}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            });
 
-        const tableBody = document.querySelector('#imoveisTable tbody');
-        tableBody.innerHTML = ''; // Clear the table body before inserting
-
-        imoveis.forEach(imovel => {
-            const row = document.createElement('tr');
-
-            // Insert table columns with data
-            row.innerHTML = `
-                <td>${imovel.id}</td>
-                <td>${imovel.codigo}</td>
-                <td><img src="${imovel.imagem_url}" alt="Imagem"></td>
-                <td>${imovel.descricao}</td>
-                <td>${imovel.endereco}</td>
-                <td>${imovel.preco}</td>
-            `;
-
-            // Append row to table body
-            tableBody.appendChild(row);
+        // Download Excel button action
+        $('#download-btn').click(function() {
+            window.location.href = '/api/imoveis/download';  // Replace with the actual route to download the Excel file
         });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
-
-// Fetch data when the page loads
-window.onload = fetchImoveis;
+    });
 </script>
-
 </body>
 </html>
+

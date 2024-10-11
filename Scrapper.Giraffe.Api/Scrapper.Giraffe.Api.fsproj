@@ -4,6 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <AssemblyName>Scrapper.Giraffe.Api.App</AssemblyName>
     <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
   </PropertyGroup>
 
   <ItemGroup>

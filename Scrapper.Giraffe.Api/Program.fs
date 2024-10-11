@@ -16,8 +16,8 @@ open ClosedXML.Excel
 open Microsoft.AspNetCore.Http
 
 type Imovel = {
-    link: string
-    imagem: string
+    url: string
+    imagem_url: string
     descricao: string
     endereco: string
     preco: string
@@ -30,7 +30,7 @@ let connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING"
 let getImoveis (next: HttpFunc) (ctx: HttpContext) =
     task {
         use conn = new NpgsqlConnection(connectionString)
-        let query = "SELECT link, imagem, descricao, endereco, preco FROM imoveis"
+        let query = "SELECT url, imagem_url, descricao, endereco, preco FROM imoveis"
         let! imoveis = conn.QueryAsync<Imovel>(query) |> Async.AwaitTask
         return! json imoveis next ctx
     }
@@ -39,7 +39,7 @@ let getImoveis (next: HttpFunc) (ctx: HttpContext) =
 let downloadImoveis (next: HttpFunc) (ctx: HttpContext) =
     task {
         use conn = new NpgsqlConnection(connectionString)
-        let query = "SELECT link, imagem, descricao, endereco, preco FROM imoveis"
+        let query = "SELECT url, imagem_url, descricao, endereco, preco FROM imoveis"
         let! imoveis = conn.QueryAsync<Imovel>(query) |> Async.AwaitTask
 
         // Create Excel file using ClosedXML
@@ -55,8 +55,8 @@ let downloadImoveis (next: HttpFunc) (ctx: HttpContext) =
 
         // Add data to the worksheet
         imoveis |> Seq.iteri (fun i imovel ->
-            worksheet.Cell(i + 2, 1).Value <- imovel.link
-            worksheet.Cell(i + 2, 2).Value <- imovel.imagem
+            worksheet.Cell(i + 2, 1).Value <- imovel.url
+            worksheet.Cell(i + 2, 2).Value <- imovel.imagem_url
             worksheet.Cell(i + 2, 3).Value <- imovel.descricao
             worksheet.Cell(i + 2, 4).Value <- imovel.endereco
             worksheet.Cell(i + 2, 5).Value <- imovel.preco
@@ -123,7 +123,7 @@ let webApp =
     choose [
         GET >=>
             choose [
-                route "/" >=> indexHandler "world"
+                route "/" >=> htmlFile "index.html"
                 routef "/hello/%s" indexHandler
                 route "/api/imoveis" >=> getImoveis
                 route "/api/imoveis/download" >=> downloadImoveis
